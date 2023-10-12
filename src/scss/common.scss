@@ -1,0 +1,106 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.section-header {
+	// .section-header__text
+	&__label {
+		line-height: math.div(31, 25);
+		&:not(:last-child) {
+			// margin-bottom: em(32, 25);
+			@include adaptiveValue("margin-bottom", 32, 15);
+		}
+	}
+	// .section-header__title
+	&__title {
+		@include adaptiveValue("font-size", 60, 35);
+		line-height: math.div(75, 60);
+		font-weight: 700;
+		color: $darkColor;
+		max-width: toRem(480);
+		&:not(:last-child) {
+			margin-bottom: em(45, 30);
+			@media (min-width: $mobile) {
+				margin-bottom: em(132, 60);
+			}
+		}
+		&--big {
+			max-width: toRem(890);
+		}
+	}
+	// .section-header__text
+	&__text {
+		line-height: math.div(45, 25);
+		max-width: toRem(540);
+	}
+	&--lite {
+		.section-header__label {
+			color: #e3e6ec;
+		}
+		.section-header__title {
+			color: #fff;
+		}
+	}
+}
+
+//====================================================================================================
+.services {
+	display: grid;
+	@include adaptiveValue("gap", 60, 30);
+	// .services__item
+	&__item {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 50, 10);
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	// .services__icon
+	&__icon {
+		flex: 0 0 toRem(60);
+		height: toRem(60);
+		img {
+			max-width: 100%;
+		}
+	}
+	// .services__body
+	&__body {
+	}
+	// .services__title
+	&__title {
+		color: #1c1f25;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: normal;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 32, 15);
+		}
+	}
+	// .services__text
+	&__text {
+		line-height: 1.8;
+	}
+}
+
+//====================================================================================================
+.projects {
+	display: flex;
+	@include adaptiveValue("gap", 87, 20);
+	// .projects__item
+	&__item {
+	}
+	// .projects__value
+	&__value {
+		@include adaptiveValue("font-size", 60, 35);
+		color: $darkColor;
+		font-weight: 700;
+		line-height: normal;
+		&:not(:last-child) {
+			margin-bottom: toRem(16);
+		}
+	}
+	// .projects__label
+	&__label {
+	}
+}
+
+//====================================================================================================
